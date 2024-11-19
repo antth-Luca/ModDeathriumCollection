@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "2 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:bone"
+    },
+    "1": {
+      "item": "deathrium_collection:pink_iron_ingot"
+    },
+    "2": {
+      "item": "deathrium_collection:pink_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "deathrium_collection:pink_coated_bone",
+    "count": 1
+  }
+}

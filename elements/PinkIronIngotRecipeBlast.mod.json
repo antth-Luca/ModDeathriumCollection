@@ -1,0 +1,20 @@
+{
+  "_fv": 39,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Blasting",
+    "xpReward": 1.4,
+    "cookingTime": 100,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "blastingInputStack": {
+      "value": "CUSTOM:OxidizedAlloy"
+    },
+    "blastingReturnStack": {
+      "value": "CUSTOM:PinkIronIngot"
+    },
+    "name": "pink_iron_ingot_recipe_blast",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,253 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 11/19/24, 12:42 PM
+Description: Initializing game
+
+net.minecraftforge.fml.ModLoadingException: Just Enough Items (jei) encountered an error during the common_setup event phase
+§7java.lang.NoSuchMethodError: 'net.minecraft.client.Minecraft net.minecraft.client.Minecraft.m_91087_()'
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:110) ~[javafmllanguage-1.18.2-40.1.0.jar%2381!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:284) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?] {}
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:219) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:284) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:536) ~[forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar%2380!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:169) ~[forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar%2380!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:24) ~[fmlloader-1.18.2-40.1.0.jar%230!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?] {}
+Caused by: java.lang.NoSuchMethodError: 'net.minecraft.client.Minecraft net.minecraft.client.Minecraft.m_91087_()'
+	at mezz.jei.forge.JustEnoughItemsClient.onRegisterReloadListenerEvent(JustEnoughItemsClient.java:30) ~[jei-1.18.2-forge-10.2.1.1008.jar%2377!/:10.2.1.1008] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:247) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:239) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:106) ~[javafmllanguage-1.18.2-40.1.0.jar%2381!/:?] {}
+	... 19 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.acceptEvent(FMLModContainer.java:110) ~[javafmllanguage-1.18.2-40.1.0.jar%2381!/:?] {}
+	at net.minecraftforge.fml.ModLoader.lambda$postEvent$31(ModLoader.java:284) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at java.util.HashMap.forEach(HashMap.java:1421) ~[?:?] {}
+	at net.minecraftforge.fml.ModList.forEachModContainer(ModList.java:219) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at net.minecraftforge.fml.ModLoader.postEvent(ModLoader.java:284) ~[fmlcore-1.18.2-40.1.0.jar%2383!/:?] {}
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:536) ~[forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar%2380!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+-- Initialization --
+Details:
+	Modules: 
+		ADVAPI32.dll:API de base do Windows 32 avançada:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		COMCTL32.dll:Biblioteca de Controles de Experiência do Usuário:6.10 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPT32.dll:Crypto API32:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTBASE.dll:Base cryptographic API DLL:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		CRYPTSP.dll:Cryptographic Service Provider API:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		CoreMessaging.dll:Microsoft CoreMessaging Dll:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		CoreUIComponents.dll:Microsoft Core UI Components Dll:10.0.26100.1882:Microsoft Corporation
+		DBGHELP.DLL:Windows Image Helper:10.0.26100.2033 (WinBuild.160101.0800):Microsoft Corporation
+		DEVOBJ.dll:Device Information Set DLL:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		DNSAPI.dll:DLL da API de cliente DNS:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		GDI32.dll:GDI Client DLL:10.0.26100.2033 (WinBuild.160101.0800):Microsoft Corporation
+		GLU32.dll:DLL da biblioteca de utilitários OpenGL:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		HID.DLL:Biblioteca de Usuário de HID:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		IMM32.DLL:Multi-User Windows IMM32 API Client DLL:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		IPHLPAPI.DLL:API de Auxiliar de IP:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		KERNEL32.DLL:DLL cliente da API BASE do Windows NT:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		KERNELBASE.dll:DLL cliente da API BASE do Windows NT:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		MMDevApi.dll:API do MMDevice:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		MSASN1.dll:ASN.1 Runtime APIs:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		MSCTF.dll:DLL de servidor MSCTF:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		MpOav.dll:IOfficeAntiVirus Module:4.18.24090.11 (26d75470953920f90fd0438874501e9d9a31e621):Microsoft Corporation
+		NSI.dll:NSI User-mode interface DLL:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		OLEAUT32.dll:OLEAUT32.DLL:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		Ole32.dll:Microsoft OLE para Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		OpenAL.dll
+		PSAPI.DLL:Process Status Helper:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		Pdh.dll:DLL auxiliar de dados de desempenho do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		RPCRT4.dll:Tempo de Execução da Chamada de Procedimento Remoto:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		SAPIWrapper_x64.dll
+		SETUPAPI.DLL:API de instalação do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		SHCORE.dll:SHCORE:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		SHELL32.dll:DLL comum do Shell do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		USER32.dll:DLL de cliente API de usuário Windows para multiusuários:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		USERENV.dll:Userenv:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		VCRUNTIME140.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		VERSION.dll:Version Checking and File Installation Libraries:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		WINHTTP.dll:Windows HTTP Services:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		WINMM.dll:MCI API DLL:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		WINTRUST.dll:Microsoft Trust Verification APIs:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		WS2_32.dll:DLL de 32 bits do Windows Socket 2.0:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		WSOCK32.dll:Windows Socket 32-Bit DLL:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		amdihk64.dll:Radeon Settings: Host Service:2,00,00,1788:Advanced Micro Devices, Inc.
+		amsi.dll:Anti-Malware Scan Interface:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		atig6pxx.dll:atiglpxx.dll:8.14.01.6564:Advanced Micro Devices, Inc. 
+		atio6axx.dll:AMD OpenGL Driver:24.02.230729_569461f:Advanced Micro Devices, Inc
+		bcrypt.dll:Biblioteca de Primitivos Criptografados do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		bcryptPrimitives.dll:Windows Cryptographic Primitives Library:10.0.26100.2033 (WinBuild.160101.0800):Microsoft Corporation
+		cfgmgr32.dll:Configuration Manager DLL:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		clbcatq.dll:COM+ Configuration Catalog:2001.12.10941.16384 (WinBuild.160101.0800):Microsoft Corporation
+		combase.dll:Microsoft COM para Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		dbgcore.DLL:Windows Core Debugging Helpers:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc.DLL:Serviço do Cliente DHCP:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		dhcpcsvc6.DLL:Cliente DHCPv6:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		dinput8.dll:Microsoft DirectInput:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		directxdatabasehelper.dll:DirectXDatabaseHelper:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		dwmapi.dll:API do Gerenciador de Janelas da Área de Trabalho Microsoft:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		dxcore.dll:DXCore:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		fastprox.dll:WMI Custom Marshaller:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		fwpuclnt.dll:API de Modo de Usuário FWP/IPsec:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		gdi32full.dll:GDI Client DLL:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		glfw.dll
+		icm32.dll:Microsoft Color Management Module (CMM):10.0.26100.2314 (WinBuild.160101.0800):Microsoft Corporation
+		inputhost.dll:InputHost:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		java.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		java.exe:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		jemalloc.dll
+		jimage.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		jli.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		jna6668434063772942092.dll:JNA native library:6.1.2:Java(TM) Native Access (JNA)
+		jsvml.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		jvm.dll:OpenJDK 64-Bit server VM:17.0.5.0:Eclipse Adoptium
+		kernel.appcore.dll:AppModel API Host:10.0.26100.1591 (WinBuild.160101.0800):Microsoft Corporation
+		lwjgl.dll
+		lwjgl_opengl.dll
+		lwjgl_stb.dll
+		management.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		management_ext.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		mscms.dll:DLL do Sistema de Correspondência de Cores Microsoft:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		msvcp140.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		msvcp_win.dll:Microsoft® C Runtime Library:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		msvcrt.dll:Windows NT CRT DLL:7.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		mswsock.dll:Provedor de serviços do Microsoft Windows Sockets 2.0:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		napinsp.dll:Provedor de Correção de Nomeação de Emails:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		net.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		nio.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		nlansp_c.dll:NLA Namespace Service Provider DLL:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		ntdll.dll:DLL de nível do NT:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		opengl32.dll:OpenGL Client DLL:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		perfos.dll:DLL de objetos de desempenho de sistema do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		pfclient.dll:SysMain Client:10.0.26100.1301 (WinBuild.160101.0800):Microsoft Corporation
+		profapi.dll:User Profile Basic API:10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		rasadhlp.dll:Remote Access AutoDial Helper:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		rsaenh.dll:Microsoft Enhanced Cryptographic Provider:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		sapi.dll:API de Fala:5.3.29825.00 (WinBuild.160101.0800):Microsoft Corporation
+		sechost.dll:Host for SCM/SDDL/LSA Lookup APIs:10.0.26100.1 (WinBuild.160101.0800):Microsoft Corporation
+		shlwapi.dll:Biblioteca de utilitário abreviado para Shell:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		textinputframework.dll:"TextInputFramework.DYNLINK":10.0.26100.2161 (WinBuild.160101.0800):Microsoft Corporation
+		ucrtbase.dll:Microsoft® C Runtime Library:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		uxtheme.dll:Biblioteca UxTheme Microsoft:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		vcruntime140_1.dll:Microsoft® C Runtime Library:14.27.29112.0 built by: vcwrkspc:Microsoft Corporation
+		verify.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+		wbemcomn.dll:WMI:10.0.26100.1150 (WinBuild.160101.0800):Microsoft Corporation
+		wbemprox.dll:WMI:10.0.26100.1000 (WinBuild.160101.0800):Microsoft Corporation
+		wbemsvc.dll:WMI:10.0.26100.1000 (WinBuild.160101.0800):Microsoft Corporation
+		win32u.dll:Win32u:10.0.26100.2314 (WinBuild.160101.0800):Microsoft Corporation
+		windows.staterepositorycore.dll:Windows StateRepository API Core:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		windows.storage.dll:API de Armazenamento Microsoft WinRT:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		winrnr.dll:LDAP RnR Provider DLL:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		wintypes.dll:DLL dos Tipos de Base do Windows:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		wshbth.dll:Windows Sockets Helper DLL:10.0.26100.1882 (WinBuild.160101.0800):Microsoft Corporation
+		xinput1_4.dll:API do Controlador Comum da Microsoft:10.0.26100.2308 (WinBuild.160101.0800):Microsoft Corporation
+		zip.dll:OpenJDK Platform binary:17.0.5.0:Eclipse Adoptium
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:169) ~[forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.jar%2380!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:24) ~[fmlloader-1.18.2-40.1.0.jar%230!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.3.jar%2310!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.2
+	Minecraft Version ID: 1.18.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.5, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1533970432 bytes (1462 MiB) / 2107637760 bytes (2010 MiB) up to 4127195136 bytes (3936 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600G with Radeon Graphics         
+	Identifier: AuthenticAMD Family 25 Model 80 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.89
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 512.00
+	Graphics card #0 deviceId: 0x1638
+	Graphics card #0 versionInfo: DriverVersion=31.0.21912.14
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 24445.12
+	Virtual memory used (MB): 12218.43
+	Swap memory total (MB): 8704.00
+	Swap memory used (MB): 113.77
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.2 SNAPSHOT
+	Backend API: AMD Radeon(TM) Graphics GL version 3.2.0 Core Profile Context 24.3.1.240216, ATI Technologies Inc.
+	Window size: <not initialized>
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	CPU: 12x AMD Ryzen 5 5600G with Radeon Graphics 
+	ModLauncher: 9.1.3+9.1.3+main.9b69c82a
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 slf4jfixer PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.18.2-40.1.0_mapped_official_1.18.2-recomp.|Minecraft                     |minecraft                     |1.18.2              |COMMON_SET|Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Deathrium Collection          |deathrium_collection          |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |40.1.0              |COMMON_SET|Manifest: NOSIGNATURE
+		supermartijn642configlib-1.1.8-forge-mc1.18.jar   |SuperMartijn642's Config Libra|supermartijn642configlib      |1.1.8               |COMMON_SET|Manifest: NOSIGNATURE
+		Jade-1.18.2-forge-5.3.2.jar                       |Jade                          |jade                          |5.3.2               |COMMON_SET|Manifest: NOSIGNATURE
+		durabilitytooltip-1.1.5-forge-mc1.18.jar          |Durability Tooltip            |durabilitytooltip             |1.1.5               |COMMON_SET|Manifest: NOSIGNATURE
+		jei-1.18.2-forge-10.2.1.1008.jar                  |Just Enough Items             |jei                           |10.2.1.1008         |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: 6c5092a3-2c2e-4a6b-82cb-c39b37120575
+	FML: 40.1
+	Forge: net.minecraftforge:40.1.0

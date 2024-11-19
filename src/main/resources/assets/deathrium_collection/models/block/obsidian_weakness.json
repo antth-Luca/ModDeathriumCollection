@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "deathrium_collection:blocks/reinforced_obsidian",
+    "up": "deathrium_collection:blocks/reinforced_obsidian",
+    "north": "deathrium_collection:blocks/reinforced_obsidian",
+    "east": "deathrium_collection:blocks/reinforced_obsidian",
+    "south": "deathrium_collection:blocks/reinforced_obsidian",
+    "west": "deathrium_collection:blocks/reinforced_obsidian",
+    "particle": "deathrium_collection:blocks/reinforced_obsidian"
+  }
+}

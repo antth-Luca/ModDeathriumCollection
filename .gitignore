@@ -1,0 +1,6 @@
+*.tmp
+*.lock
+/.gradle
+/.idea
+/build
+/.mcreator

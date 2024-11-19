@@ -1,0 +1,40 @@
+{
+  "_fv": 39,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "real_forge_hammer",
+    "customModelName": "Normal",
+    "name": "The real forge hammer",
+    "specialInfo": [
+      "This is the real",
+      "special forge hammer. Try right-clicking on a Bedrock!"
+    ],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "MultiTool",
+    "harvestLevel": 4,
+    "efficiency": 15.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 72.0,
+    "usageCount": 10693,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:ObsidianWeakness"
+      }
+    ],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "TheRealForgeHammerRightclickedOnBlock"
+    },
+    "onBlockDestroyedWithTool": {
+      "name": "TheRealForgeHammerBlockDestroyedWithTool"
+    }
+  }
+}

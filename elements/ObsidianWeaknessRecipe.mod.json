@@ -1,0 +1,46 @@
+{
+  "_fv": 39,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "Blocks.OBSIDIAN"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      },
+      {
+        "value": "CUSTOM:PutridGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ObsidianWeakness"
+    },
+    "name": "obsidian_weakness_recipe",
+    "namespace": "mod"
+  }
+}
