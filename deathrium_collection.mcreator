@@ -338,6 +338,102 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "HeavyAgglomerate",
+      "type": "item",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heavy_agglomerate",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/deathrium_collection/models/item/heavy_agglomerate.json",
+          "src/main/java/net/mcreator/deathriumcollection/item/HeavyAgglomerateItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "HeavyAgglomerateRecipe",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heavy_agglomerate_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/deathrium_collection/recipes/heavy_agglomerate_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "InsigniaOfDeath",
+      "type": "item",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insignia_of_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/deathriumcollection/item/InsigniaOfDeathItem.java",
+          "src/main/resources/assets/deathrium_collection/models/item/insignia_of_death.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "SignatureOfDeath",
+      "type": "item",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "signature_of_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/deathriumcollection/item/SignatureOfDeathItem.java",
+          "src/main/resources/assets/deathrium_collection/models/item/signature_of_death.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "InsigniaOfDeathLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insignia_of_death_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/deathrium_collection/loot_tables/chests/stronghold_library.json"
+        ]
+      },
+      "path": "~/LootTables"
+    },
+    {
+      "name": "InsigniaOfDeathKillIncrement",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "insignia_of_death_kill_increment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/deathriumcollection/procedures/InsigniaOfDeathKillIncrementProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [],
@@ -347,23 +443,29 @@
       "item.deathrium_collection.oxidized_alloy": "Oxidized alloy",
       "item.deathrium_collection.unfinished_forge_hammer": "Unfinished forge hammer",
       "item.deathrium_collection.pink_furnace_core": "Pink furnace core",
-      "item.deathrium_collection.pink_coated_bone": "Pink coated bone",
+      "item.deathrium_collection.heavy_agglomerate": "Heavy Agglomerate",
       "block.deathrium_collection.obsidian_weakness": "Obsidian of weakness",
+      "item.deathrium_collection.signature_of_death": "Signature of Death",
       "item.deathrium_collection.bedrock_shard": "Bedrock shard",
       "item.deathrium_collection.pink_iron_ingot": "Pink iron ingot",
+      "item.deathrium_collection.insignia_of_death": "Insignia of Death",
+      "item.deathrium_collection.pink_coated_bone": "Pink coated bone",
       "item.deathrium_collection.putrid_gem": "Putrid gem",
       "item.deathrium_collection.the_real_forge_hammer": "The real forge hammer"
     },
     "pt_br": {
       "item.deathrium_collection.oxidized_alloy": "Liga oxidada",
-      "item.deathrium_collection.unfinished_forge_hammer": "Unfinished forge hammer",
+      "item.deathrium_collection.unfinished_forge_hammer": "Martelo de forja inacabado",
       "item.deathrium_collection.pink_furnace_core": "Núcleo rosa de fornalha",
-      "item.deathrium_collection.pink_coated_bone": "Osso revestido rosa",
+      "item.deathrium_collection.heavy_agglomerate": "Aglomerado pesado",
       "block.deathrium_collection.obsidian_weakness": "Obsidian of weakness",
+      "item.deathrium_collection.signature_of_death": "Assinatura da Morte",
       "item.deathrium_collection.bedrock_shard": "Fragmento de Bedrock",
       "item.deathrium_collection.pink_iron_ingot": "Barra de ferrosa",
+      "item.deathrium_collection.insignia_of_death": "Insígnia da Morte",
+      "item.deathrium_collection.pink_coated_bone": "Osso revestido rosa",
       "item.deathrium_collection.putrid_gem": "Gema putrefa",
-      "item.deathrium_collection.the_real_forge_hammer": "The real forge hammer"
+      "item.deathrium_collection.the_real_forge_hammer": "Verdadeiro martelo de forja"
     }
   },
   "foldersRoot": {
@@ -387,6 +489,10 @@
       },
       {
         "name": "Procedures",
+        "children": []
+      },
+      {
+        "name": "LootTables",
         "children": []
       }
     ]

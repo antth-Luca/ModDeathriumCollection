@@ -34,7 +34,7 @@ public class UnfinishedForgeHammerItem extends TieredItem {
 	public UnfinishedForgeHammerItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 8213;
+				return 4213;
 			}
 
 			public float getSpeed() {
@@ -42,7 +42,7 @@ public class UnfinishedForgeHammerItem extends TieredItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 60f;
+				return 30f;
 			}
 
 			public int getLevel() {
@@ -89,7 +89,7 @@ public class UnfinishedForgeHammerItem extends TieredItem {
 		if (equipmentSlot == EquipmentSlot.MAINHAND) {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
-			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 60f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 30f, AttributeModifier.Operation.ADDITION));
 			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
 			return builder.build();
 		}

@@ -36,7 +36,7 @@ public class TheRealForgeHammerRightclickedOnBlockProcedure {
 
 				// Aumenta o dano no martelo
 				((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY))
-						.setDamageValue((int) (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getDamageValue() + 1));
+						.setDamageValue((int) (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getDamageValue() + 3));
 			}
 		}
 	}
