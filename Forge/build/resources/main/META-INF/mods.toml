@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT License"
+[[mods]]
+modId="deathrium_collection"
+version="${file.jarVersion}"
+displayName="Deathrium Collection"
+logoFile=""
+credits=""
+authors="antthLuca"
+description='''
+Bringing not only the Deathrium ore, but an entire collection.
+
+Watch out! Even Death fears Deathrium.
+
+GG!
+'''
+
+[[dependencies.deathrium_collection]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.deathrium_collection]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
