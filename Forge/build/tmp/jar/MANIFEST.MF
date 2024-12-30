@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Specification-Title: deathrium_collection
-Specification-Vendor: deathrium_collectionsareus
-Specification-Version: 1
-Implementation-Title: Forge
-Implementation-Version: 1.0
-Implementation-Vendor: deathrium_collectionsareus
-Implementation-Timestamp: 2024-11-22T10:24:23-0300
-
