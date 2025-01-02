@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import io.github.antthluca.deathrium_collection.init.InitBlockItems;
+import io.github.antthluca.deathrium_collection.init.InitBlocks;
 import io.github.antthluca.deathrium_collection.init.InitCreativeTabs;
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +22,8 @@ public class DeathriumCollection {
         IEventBus bus = ctx.getModEventBus();
 
         InitItems.ITEMS.register(bus);
+        InitBlocks.BLOCKS.register(bus);
+        InitBlockItems.BLOCK_ITEMS.register(bus);
         InitCreativeTabs.TABS.register(bus);
 
         bus.addListener(this::setup);
