@@ -3,6 +3,9 @@ package io.github.antthluca.deathrium_collection;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+
+import io.github.antthluca.deathrium_collection.init.InitCreativeTabs;
+import io.github.antthluca.deathrium_collection.init.InitItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -15,6 +18,9 @@ public class DeathriumCollection {
 
     public DeathriumCollection(FMLJavaModLoadingContext ctx) {
         IEventBus bus = ctx.getModEventBus();
+
+        InitItems.ITEMS.register(bus);
+        InitCreativeTabs.TABS.register(bus);
 
         bus.addListener(this::setup);
     }
