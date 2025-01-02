@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BP",
+        "P "
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:bone"
+        },
+        "P": {
+            "item": "deathrium_collection:pinkiron_ingot"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:coated_bone",
+        "count": 1
+    }
+}
