@@ -19,6 +19,9 @@ public class InitItems {
     public static final RegistryObject<Item> PINKIRON_INGOT = ITEMS.register(
         "pinkiron_ingot", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> PINKIRON_NUGGET = ITEMS.register(
+    "pinkiron_nugget", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> COATED_BONE = ITEMS.register(
         "coated_bone", () -> new Item(new Item.Properties()));
 
