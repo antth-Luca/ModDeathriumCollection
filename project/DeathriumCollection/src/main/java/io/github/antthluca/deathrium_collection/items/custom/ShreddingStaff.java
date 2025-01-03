@@ -2,52 +2,78 @@ package io.github.antthluca.deathrium_collection.items.custom;
 
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class ShreddingStaff extends Item {
     public ShreddingStaff(Properties properties) {
         super(properties);
     }
 
+    @SuppressWarnings("null")
     @Override
-    public InteractionResult useOn(@SuppressWarnings("null") UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
-        BlockPos pos = context.getClickedPos();
-        BlockState blockState = level.getBlockState(pos);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
 
-        if (!level.isClientSide() && player != null && blockState.getBlock() == Blocks.BEDROCK) {
-            if (player.getCooldowns().isOnCooldown(this)) return InteractionResult.FAIL;  // Verifica se o item está em cooldown
-
-            if (level instanceof ServerLevel serverLevel) {
-                serverLevel.getServer().execute(() -> {
-                    ItemStack stack = context.getItemInHand();
-
-                    // Gera o item ao interagir com o bloco
-                    ItemStack generatedItem = new ItemStack(InitItems.BEDROCK_SHARD.get(), 1); // Substitua pelo item desejado
-                    player.addItem(generatedItem);
-
-                    // Diminui a durabilidade do cajado
-                    stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
-
-                    // Adiciona cooldown ao item
-                    player.getCooldowns().addCooldown(this, 100); // 100 ticks = 5 segundos
-                });
-            }
-            return InteractionResult.SUCCESS;
+        // Verifica se o item está em cooldown
+        if (player.getCooldowns().isOnCooldown(this)) {
+            return InteractionResultHolder.fail(stack);
         }
 
-        return InteractionResult.PASS;
+        // Inicia o carregamento
+        player.startUsingItem(hand);
+        return InteractionResultHolder.consume(stack);
+    }
+
+    @SuppressWarnings("null")
+    @Override
+    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+        return 36000; // Define a duração máxima de uso (como o arco)
+    }
+
+    @Override
+    public UseAnim getUseAnimation(@SuppressWarnings("null") ItemStack stack) {
+        return UseAnim.BOW; // Define a animação de carregamento como a do arco
+    }
+
+    @SuppressWarnings("null")
+    @Override
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
+        if (entity instanceof Player player && !level.isClientSide()) {
+            // Calcula o tempo total de carregamento
+            int chargeTime = this.getUseDuration(stack, entity) - timeLeft;
+            // Obtém o bloco na posição em que o jogador está olhando
+            BlockHitResult rayTraceResult = rayTrace(player);
+            BlockPos clickedPos = rayTraceResult.getBlockPos();
+            BlockState blockState = level.getBlockState(clickedPos);
+
+            // Carregado por no mínimo 1 segundo e está usando numa Bedrock
+            if (chargeTime >= 20 && blockState.getBlock() == Blocks.BEDROCK) {
+                // Gera o item ao interagir com o bloco
+                ItemStack generatedItem = new ItemStack(InitItems.BEDROCK_SHARD.get(), 1);
+                player.addItem(generatedItem);
+
+                // Diminui a durabilidade do cajado
+                stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+
+                // Adiciona cooldown ao item
+                player.getCooldowns().addCooldown(this, 100); // 100 ticks = 5 segundos
+            }
+        }
+    }
+
+    // Método auxiliar para ray tracing
+    private BlockHitResult rayTrace(Player player) {
+        return (BlockHitResult) player.pick(2.0, 1.0F, false); // Fazendo ray tracing com 2 blocos de distância
     }
 }
