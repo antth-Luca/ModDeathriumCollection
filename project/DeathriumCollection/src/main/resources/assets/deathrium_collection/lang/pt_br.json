@@ -1,6 +1,8 @@
 {
     "itemGroup.deathrium_collection": "Deathrium Collection",
 
+    "item.deathrium_collection.common_tooltip": "Pressione SHIFT para detalhes",
+
     "item.deathrium_collection.oxidized_alloy": "Liga Oxidada",
     "item.deathrium_collection.pinkiron_ingot": "Barra de Ferrósa",
     "item.deathrium_collection.pinkiron_nugget": "Pepita de Ferrósa",
@@ -8,8 +10,10 @@
     "item.deathrium_collection.soul_glass": "Vidro de Alma",
     "item.deathrium_collection.crystallized_soul_sand_item": "Areia da Alma Cristalizada",
     "item.deathrium_collection.bedrock_shard": "Fragmento de Rocha-mãe",
+    "item.deathrium_collection.bedrock_shard.tooltip": "Ei! Isso não era para ser indestrutível?!",
     "item.deathrium_collection.shredding_staff": "Cajado Fragmentador",
-    "item.deathrium_collection.shredding_staff.failed_use": "Você quer perder um pedaço da alma? Tente novamente com um Vidro de Alma na MÃO SECUNDÁRIA!",
+    "item.deathrium_collection.shredding_staff.failed_use": "[Deathrium Collection] Você quer perder um pedaço da alma? Tente novamente com um Vidro de Alma na MÃO SECUNDÁRIA!",
+    "item.deathrium_collection.shredding_staff.tooltip": "Capaz de fragmentar almas e infundir com o poder da Rocha-mãe. Você não vai querer se fragmentar, né? Então, use Vidro de Alma na MÃO SECUNDÁRIA.",
 
     "block.deathrium_collection.crystallized_soul_sand": "Areia da Alma Cristalizada"
 }

@@ -1,7 +1,7 @@
 package io.github.antthluca.deathrium_collection.init;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
-import io.github.antthluca.deathrium_collection.items.custom.ShreddingStaff;
+import io.github.antthluca.deathrium_collection.items.BedrockShardItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,11 +29,5 @@ public class InitItems {
         "soul_glass", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BEDROCK_SHARD = ITEMS.register(
-        "bedrock_shard", () -> new Item(new Item.Properties()));
-
-    // Tools
-    public static final RegistryObject<Item> SHREDDING_STAFF = ITEMS.register(
-        "shredding_staff", () -> new ShreddingStaff(new Item.Properties()
-            .stacksTo(1)
-            .durability(250)));
+        "bedrock_shard", () -> new BedrockShardItem(new Item.Properties()));
 }
