@@ -23,4 +23,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> SOUL_GLASS = ITEMS.register(
         "soul_glass", () -> new Item(new Item.Properties()));
+
+        public static final RegistryObject<Item> BEDROCK_SHARD = ITEMS.register(
+            "bedrock_shard", () -> new Item(new Item.Properties()));
 }
