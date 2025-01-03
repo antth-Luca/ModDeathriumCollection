@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NGN",
+        " B ",
+        " B "
+    ],
+    "key": {
+        "N": {
+            "item": "deathrium_collection:pinkiron_nugget"
+        },
+        "G": {
+            "item": "deathrium_collection:soul_glass"
+        },
+        "B": {
+            "item": "deathrium_collection:coated_bone"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:shredding_staff",
+        "count": 1
+    }
+}
