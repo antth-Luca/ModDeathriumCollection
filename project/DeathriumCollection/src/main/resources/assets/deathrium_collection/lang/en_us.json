@@ -8,6 +8,7 @@
     "item.deathrium_collection.crystallized_soul_sand_item": "Crystallized Soul Sand",
     "item.deathrium_collection.bedrock_shard": "Bedrock Shard",
     "item.deathrium_collection.shredding_staff": "Shredding Staff",
+    "item.deathrium_collection.shredding_staff.failed_use": "Do you want to lose a piece of your soul? Try again with a Soul Glass in the SECOND HAND!",
 
     "block.deathrium_collection.crystallized_soul_sand": "Crystallized Soul Sand"
 }

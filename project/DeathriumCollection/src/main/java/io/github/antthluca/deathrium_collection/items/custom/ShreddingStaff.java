@@ -2,6 +2,7 @@ package io.github.antthluca.deathrium_collection.items.custom;
 
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -59,15 +60,24 @@ public class ShreddingStaff extends Item {
 
             // Carregado por no mínimo 1 segundo e está usando numa Bedrock
             if (chargeTime >= 20 && blockState.getBlock() == Blocks.BEDROCK) {
-                // Gera o item ao interagir com o bloco
-                ItemStack generatedItem = new ItemStack(InitItems.BEDROCK_SHARD.get(), 1);
-                player.addItem(generatedItem);
+                // Verifica se o jogador possui o item específico na mão secundária
+                ItemStack offhandItem = player.getOffhandItem();
+                if (!offhandItem.isEmpty() && offhandItem.getItem() == InitItems.SOUL_GLASS.get()) {
+                    // Se o item desejado estiver presente na mão secundária, reduz a quantidade do item
+                    offhandItem.shrink(1); // Reduz 1 unidade do item
 
-                // Diminui a durabilidade do cajado
-                stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+                    // Gera o item
+                    ItemStack generatedItem = new ItemStack(InitItems.BEDROCK_SHARD.get(), 1);
+                    player.addItem(generatedItem);
 
-                // Adiciona cooldown ao item
-                player.getCooldowns().addCooldown(this, 100); // 100 ticks = 5 segundos
+                    // Diminui a durabilidade do cajado
+                    stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+
+                    // Adiciona cooldown ao item
+                    player.getCooldowns().addCooldown(this, 100); // 100 ticks = 5 segundos
+                } else {
+                    player.sendSystemMessage(Component.translatable("item.deathrium_collection.shredding_staff.failed_use"));
+                }
             }
         }
     }
