@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BEB",
+        "GIG",
+        "BGB"
+    ],
+    "key": {
+        "B": {
+            "item": "deathrium_collection:bedrock_shard"
+        },
+        "E": {
+            "item": "minecraft:echo_shard"
+        },
+        "G": {
+            "item": "deathrium_collection:soul_glass"
+        },
+        "I": {
+            "item": "deathrium_collection:insignia_of_death"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:insignia_of_death",
+        "count": 2
+    }
+}

@@ -2,6 +2,8 @@ package io.github.antthluca.deathrium_collection.init;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.items.BedrockShardItem;
+import io.github.antthluca.deathrium_collection.items.HeavyAgglomerate;
+import io.github.antthluca.deathrium_collection.items.InsigniaOfDeath;
 import io.github.antthluca.deathrium_collection.items.PinkFurnaceCore;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -46,5 +48,8 @@ public class InitItems {
         "obsidian_alloy", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HEAVY_AGGLOMERATE = ITEMS.register(
-        "heavy_agglomerate", () -> new Item(new Item.Properties()));
+        "heavy_agglomerate", () -> new HeavyAgglomerate(new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> INSIGNIA_OF_DEATH = ITEMS.register(
+        "insignia_of_death", () -> new InsigniaOfDeath(new Item.Properties().fireResistant()));
 }
