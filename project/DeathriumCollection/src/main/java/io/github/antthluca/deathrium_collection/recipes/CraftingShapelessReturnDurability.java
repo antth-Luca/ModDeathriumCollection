@@ -1,6 +1,9 @@
 package io.github.antthluca.deathrium_collection.recipes;
 
 import io.github.antthluca.deathrium_collection.init.InitRecipeSerializers;
+
+import java.util.Random;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
@@ -36,7 +39,8 @@ public class CraftingShapelessReturnDurability extends ShapelessRecipe {
                 var returnItem = stack.copy();
 
                 if (returnItem.isDamageableItem()) {
-                    var damage = returnItem.getDamageValue() + 1;
+                    Random rand = new Random();
+                    var damage = returnItem.getDamageValue() + (rand.nextInt(10) + 1);
                     returnItem.setDamageValue(damage);
                     if (damage < returnItem.getMaxDamage()) {
                         remaining.set(i, returnItem);
