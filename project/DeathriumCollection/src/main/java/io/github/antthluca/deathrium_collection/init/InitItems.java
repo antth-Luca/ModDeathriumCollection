@@ -2,6 +2,7 @@ package io.github.antthluca.deathrium_collection.init;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.items.BedrockShardItem;
+import io.github.antthluca.deathrium_collection.items.PinkFurnaceCore;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +25,11 @@ public class InitItems {
 
     public static final RegistryObject<Item> COATED_BONE = ITEMS.register(
         "coated_bone", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> PINK_FURNACE_CORE = ITEMS.register(
+        "pink_furnace_core", () -> new PinkFurnaceCore(new Item.Properties()
+            .stacksTo(1)
+            .durability(100)));
 
     public static final RegistryObject<Item> SOUL_GLASS = ITEMS.register(
         "soul_glass", () -> new Item(new Item.Properties()));

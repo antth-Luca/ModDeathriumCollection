@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GPG",
+        "PFP",
+        "MPM"
+    ],
+    "key": {
+        "P": {
+            "item": "deathrium_collection:pinkiron_ingot"
+        },
+        "F": {
+            "item": "minecraft:furnace"
+        },
+        "G": {
+            "item": "minecraft:glowstone"
+        },
+        "M": {
+            "item": "minecraft:magma_block"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:pink_furnace_core",
+        "count": 1
+    }
+}
