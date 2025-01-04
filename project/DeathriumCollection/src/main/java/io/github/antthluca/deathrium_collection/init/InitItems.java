@@ -41,4 +41,7 @@ public class InitItems {
     public static final RegistryObject<Item> BEDROCK_SHARD = ITEMS.register(
         "bedrock_shard", () -> new BedrockShardItem(new Item.Properties()
             .fireResistant()));
+
+    public static final RegistryObject<Item> OBSIDIAN_ALLOY = ITEMS.register(
+        "obsidian_alloy", () -> new Item(new Item.Properties()));
 }

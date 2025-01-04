@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ON",
+        "NO"
+    ],
+    "key": {
+        "O": {
+            "item": "minecraft:obsidian"
+        },
+        "N": {
+            "item": "deathrium_collection:pinkiron_nugget"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:obsidian_alloy",
+        "count": 4
+    }
+}
