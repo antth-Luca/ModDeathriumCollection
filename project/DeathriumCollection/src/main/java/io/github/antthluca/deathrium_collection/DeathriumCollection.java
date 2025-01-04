@@ -8,6 +8,7 @@ import io.github.antthluca.deathrium_collection.init.InitBlockItems;
 import io.github.antthluca.deathrium_collection.init.InitBlocks;
 import io.github.antthluca.deathrium_collection.init.InitCreativeTabs;
 import io.github.antthluca.deathrium_collection.init.InitItems;
+import io.github.antthluca.deathrium_collection.init.InitRecipeSerializers;
 import io.github.antthluca.deathrium_collection.init.InitToolItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +28,7 @@ public class DeathriumCollection {
         InitBlocks.BLOCKS.register(bus);
         InitBlockItems.BLOCK_ITEMS.register(bus);
         InitCreativeTabs.TABS.register(bus);
+        InitRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
 
         bus.addListener(this::setup);
     }

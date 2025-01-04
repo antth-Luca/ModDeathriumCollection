@@ -31,9 +31,14 @@ public class InitItems {
             .stacksTo(1)
             .durability(100)));
 
+    public static final RegistryObject<Item> NETHER_ALLOY = ITEMS.register(
+        "nether_alloy", () -> new Item(new Item.Properties()
+            .fireResistant()));
+
     public static final RegistryObject<Item> SOUL_GLASS = ITEMS.register(
         "soul_glass", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BEDROCK_SHARD = ITEMS.register(
-        "bedrock_shard", () -> new BedrockShardItem(new Item.Properties()));
+        "bedrock_shard", () -> new BedrockShardItem(new Item.Properties()
+            .fireResistant()));
 }

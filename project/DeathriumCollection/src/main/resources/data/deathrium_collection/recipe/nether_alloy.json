@@ -1,0 +1,33 @@
+{
+    "type": "deathrium_collection:crafting_shapeless_return_durability",
+    "ingredients": [
+        {
+            "item": "deathrium_collection:pinkiron_ingot"
+        },
+        {
+            "item": "minecraft:nether_star"
+        },
+        {
+            "item": "deathrium_collection:pinkiron_ingot"
+        },
+        {
+            "item": "minecraft:netherrack"
+        },
+        {
+            "item": "minecraft:nether_star"
+        },
+        {
+            "item": "minecraft:netherrack"
+        },
+        {
+            "item": "deathrium_collection:pink_furnace_core"
+        }
+    ],
+    "result": {
+        "id": "deathrium_collection:nether_alloy",
+        "count": 1
+    },
+    "durability_return": {
+        "item": "deathrium_collection:pink_furnace_core"
+    }
+}
