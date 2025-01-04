@@ -44,4 +44,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> OBSIDIAN_ALLOY = ITEMS.register(
         "obsidian_alloy", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HEAVY_AGGLOMERATE = ITEMS.register(
+        "heavy_agglomerate", () -> new Item(new Item.Properties()));
 }

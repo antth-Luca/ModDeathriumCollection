@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NB",
+        "BN"
+    ],
+    "key": {
+        "B": {
+            "item": "deathrium_collection:bedrock_shard"
+        },
+        "N": {
+            "item": "minecraft:netherite_scrap"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:heavy_agglomerate",
+        "count": 2
+    }
+}
