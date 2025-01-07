@@ -24,13 +24,13 @@ public class InitArmorMaterials {
         "deathrium", () -> new ArmorMaterial(
             // Proteção
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 4);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BOOTS, 9);
+                map.put(ArmorItem.Type.LEGGINGS, 18);
+                map.put(ArmorItem.Type.CHESTPLATE, 24);
+                map.put(ArmorItem.Type.HELMET, 9);
             }),
             // Encantabilidade
-            12,
+            15,
             // Som
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             // Ingrediente para reparo
@@ -49,8 +49,8 @@ public class InitArmorMaterials {
                 )
             ),
             // Resistência à perfuração
-            2.0F,
+            36.0F,
             // Resistência a repulsão
-            0.0F
+            45.0F
         ));
 }

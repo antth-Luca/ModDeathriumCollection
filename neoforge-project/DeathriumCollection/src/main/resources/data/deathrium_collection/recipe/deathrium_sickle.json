@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DDD",
+        " B ",
+        "B  "
+    ],
+    "key": {
+        "D": {
+            "item": "deathrium_collection:deathrium_ingot"
+        },
+        "B": {
+            "item": "deathrium_collection:coated_bone"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:deathrium_sickle",
+        "count": 1
+    }
+}

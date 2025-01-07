@@ -20,8 +20,9 @@ public class InitCreativeTabs {
             .icon(() -> new ItemStack(InitItems.DEATHRIUM_INGOT.get()))
             .displayItems((displayParams, output) -> {
                 InitItems.ITEMS.getEntries().forEach(item -> output.accept(item.get()));
-                InitBlockItems.BLOCK_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
+                InitToolItems.TOOL_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
                 InitArmorItems.ARMOR_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
+                InitBlockItems.BLOCK_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
             }).build()
     );
 }
