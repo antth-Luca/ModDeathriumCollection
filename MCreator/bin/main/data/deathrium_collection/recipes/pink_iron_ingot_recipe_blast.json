@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "experience": 1.4,
-  "cookingtime": 100,
-  "ingredient": {
-    "item": "deathrium_collection:oxidized_alloy"
-  },
-  "result": "deathrium_collection:pink_iron_ingot"
-}

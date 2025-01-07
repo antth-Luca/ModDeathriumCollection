@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ANA",
+        "OMO",
+        "AOA"
+    ],
+    "key": {
+        "A": {
+            "item": "deathrium_collection:heavy_agglomerate"
+        },
+        "N": {
+            "item": "deathrium_collection:nether_alloy"
+        },
+        "O": {
+            "item": "deathrium_collection:obsidian_alloy"
+        },
+        "M": {
+            "item": "deathrium_collection:signature_of_death"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:deathrium_ingot",
+        "count": 1
+    }
+}

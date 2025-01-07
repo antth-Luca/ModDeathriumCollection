@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "deathrium_collection:oxidized_alloy"
+    },
+    "result": {
+        "id": "deathrium_collection:pinkiron_ingot",
+        "count": 1
+    },
+    "experience": 1.4,
+    "cookingtime": 100
+}
