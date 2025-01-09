@@ -30,7 +30,7 @@ public class InitArmorMaterials {
                 map.put(ArmorItem.Type.HELMET, 9);
             }),
             // Encantabilidade
-            15,
+            22,
             // Som
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             // Ingrediente para reparo

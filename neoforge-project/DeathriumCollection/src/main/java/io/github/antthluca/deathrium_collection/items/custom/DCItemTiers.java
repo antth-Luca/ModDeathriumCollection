@@ -12,7 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 
 public enum DCItemTiers implements Tier {
-    DEATHRIUM(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 0, 30.0F, 30.0F, 45, () -> Ingredient.of(InitItems.DEATHRIUM_INGOT.get()));
+    DEATHRIUM(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 0, 30.0F, 30.0F, 22, () -> Ingredient.of(InitItems.DEATHRIUM_INGOT.get()));
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int maxUses;
