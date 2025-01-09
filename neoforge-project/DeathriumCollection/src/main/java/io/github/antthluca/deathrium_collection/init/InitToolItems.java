@@ -1,10 +1,10 @@
 package io.github.antthluca.deathrium_collection.init;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
+import io.github.antthluca.deathrium_collection.items.custom.DCItemTiers;
 import io.github.antthluca.deathrium_collection.items.tool.DeathriumSickle;
 import io.github.antthluca.deathrium_collection.items.tool.ShreddingStaff;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -19,8 +19,5 @@ public class InitToolItems {
 
     // Weapons
     public static final DeferredHolder<Item, Item> DEATHRIUM_SICKLE = TOOL_ITEMS.register(
-        "deathrium_sickle", () -> new DeathriumSickle(
-            Tiers.NETHERITE,    
-            new Item.Properties()
-                .fireResistant()));
+        "deathrium_sickle", () -> new DeathriumSickle(DCItemTiers.DEATHRIUM));
 }
