@@ -51,6 +51,6 @@ public class InitArmorMaterials {
             // Resistência à perfuração
             36.0F,
             // Resistência a repulsão
-            45.0F
+            1.0F
         ));
 }
