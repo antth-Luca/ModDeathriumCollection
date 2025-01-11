@@ -1,26 +1,38 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "BIB",
-        "GEG",
-        "BGB"
-    ],
-    "key": {
-        "B": {
+    "type": "deathrium_collection:crafting_shapeless_return_durability",
+    "ingredients": [
+        {
             "item": "deathrium_collection:bedrock_shard"
         },
-        "I": {
+        {
             "item": "deathrium_collection:insignia_of_death"
         },
-        "G": {
+        {
+            "item": "deathrium_collection:bedrock_shard"
+        },
+        {
             "item": "deathrium_collection:soul_glass"
         },
-        "E": {
+        {
             "item": "minecraft:echo_shard"
+        },
+        {
+            "item": "deathrium_collection:soul_glass"
+        },
+        {
+            "item": "deathrium_collection:bedrock_shard"
+        },
+        {
+            "item": "deathrium_collection:soul_glass"
+        },
+        {
+            "item": "deathrium_collection:bedrock_shard"
         }
-    },
+    ],
     "result": {
-        "id": "deathrium_collection:insignia_of_death",
-        "count": 2
+        "id": "deathrium_collection:insignia_of_death"
+    },
+    "durability_return": {
+        "item": "deathrium_collection:insignia_of_death"
     }
 }
