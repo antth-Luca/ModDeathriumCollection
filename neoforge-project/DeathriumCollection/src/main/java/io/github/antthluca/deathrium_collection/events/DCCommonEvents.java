@@ -67,7 +67,7 @@ public class DCCommonEvents {
             // Verifica se o dano é causado por uma entidade
             if (source.getEntity() instanceof LivingEntity sourceEntity) {
                 // Cancela o dano se o item usado não for a foice
-                if (!sourceEntity.getMainHandItem().is(InitToolItems.DEATHRIUM_SICKLE.get())) {
+                if (!sourceEntity.getMainHandItem().is(InitToolItems.DEATHRIUM_SCYTHE.get())) {
                     event.setCanceled(true);
                 }
             } 
