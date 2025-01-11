@@ -1,20 +1,22 @@
 package io.github.antthluca.deathrium_collection.events;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
+import io.github.antthluca.deathrium_collection.init.InitToolItems;
 import io.github.antthluca.deathrium_collection.utils.ArmorVerification;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-import net.neoforged.neoforge.event.entity.living.MobDespawnEvent.Result;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = DeathriumCollection.MODID)
@@ -42,6 +44,21 @@ public class DCCommonEvents {
     }
 
     @SubscribeEvent
+    public static void onLivingHurt(LivingIncomingDamageEvent event) {
+        LivingEntity entity = event.getEntity();
+        DamageSource source = event.getSource();
+
+        if (
+            // Tem armadura completa
+            ArmorVerification.hasFullArmor((Player) entity)
+            // Causador do dano é entidade
+            && source.getEntity() instanceof LivingEntity sourceEntity
+            // Item usado para causar dano não é a foice
+            && !(sourceEntity.getMainHandItem().getItem() == InitToolItems.DEATHRIUM_SICKLE.get())
+        ) event.setCanceled(true);  // Cancela o dano!
+    }
+
+    @SubscribeEvent
     public static void onInvulnerabilityChecked(EntityInvulnerabilityCheckEvent event) {
         if (event.getEntity() instanceof ServerPlayer player && ArmorVerification.hasFullArmor(player)) {
             var source = event.getSource();
@@ -62,11 +79,25 @@ public class DCCommonEvents {
 		}
 	}
 
-    // @SubscribeEvent
-    // public static void onPotionApplicable(MobEffectEvent.Applicable event) {
-    //     if (event.getEntity() instanceof Player player && ArmorVerification.hasFullArmor(player)) {
-	// 		MobEffectInstance effect = event.getEffectInstance();
-    //         if (((MobEffect) effect.getEffect()).getCategory() == MobEffectCategory.HARMFUL) event.setResult(MobEffectEvent.Applicable.Result.);
-    //     }
-    // }
+    @SubscribeEvent
+    public static void onPotionApplicable(MobEffectEvent.Applicable event) {
+        if (event.getEntity() instanceof Player player && ArmorVerification.hasFullArmor(player)) {
+            MobEffectInstance effectInstance = event.getEffectInstance();
+
+            if (effectInstance != null) {
+                var holderEffect = effectInstance.getEffect();
+
+                if (holderEffect.value() != null 
+                    && holderEffect.value().getCategory() == MobEffectCategory.HARMFUL) {
+
+                    player.removeEffect(holderEffect);
+                    System.out.println("EFFECT REMOVED");
+
+                    return;
+                }
+            } else {
+                System.out.println("EFFECT INSTANCE É NULL");
+            }
+        }
+    }
 }
