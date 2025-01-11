@@ -20,6 +20,7 @@ public class InitArmorItems {
             InitArmorMaterials.DEATHRIUM,
             ArmorItem.Type.HELMET,
             new Item.Properties()
+                .stacksTo(1)
                 .rarity(Rarity.EPIC)
                 .fireResistant()));
 
@@ -28,6 +29,7 @@ public class InitArmorItems {
             InitArmorMaterials.DEATHRIUM,
             ArmorItem.Type.CHESTPLATE,
             new Item.Properties()
+                .stacksTo(1)
                 .rarity(Rarity.EPIC)
                 .fireResistant()));
 
@@ -36,6 +38,7 @@ public class InitArmorItems {
             InitArmorMaterials.DEATHRIUM,
             ArmorItem.Type.LEGGINGS,
             new Item.Properties()
+                .stacksTo(1)
                 .rarity(Rarity.EPIC)
                 .fireResistant()));
 
@@ -44,6 +47,7 @@ public class InitArmorItems {
             InitArmorMaterials.DEATHRIUM,
             ArmorItem.Type.BOOTS,
             new Item.Properties()
+                .stacksTo(1)
                 .rarity(Rarity.EPIC)
                 .fireResistant()));
 }
