@@ -1,5 +1,9 @@
 package io.github.antthluca.deathrium_collection.events;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.init.InitToolItems;
 import io.github.antthluca.deathrium_collection.utils.ArmorVerification;
@@ -16,7 +20,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = DeathriumCollection.MODID)
@@ -40,6 +43,17 @@ public class DCCommonEvents {
                 System.out.println("FOME DEFINIDA");
                 foodData.setFoodLevel(20);
             }
+            // Remover efeitos negativos
+            Collection<MobEffectInstance> activeEffects = player.getActiveEffects();  // Obtem efeitos ativos
+            List<MobEffectInstance> harmfulEffectsToRemove = new ArrayList<>();
+            for (MobEffectInstance effect : activeEffects) {  // Separa efeitos negativos
+                if (effect != null && effect.getEffect().value().getCategory() == MobEffectCategory.HARMFUL) {
+                    harmfulEffectsToRemove.add(effect);
+                }
+            }
+            for (MobEffectInstance effect : harmfulEffectsToRemove) {
+                player.removeEffect(effect.getEffect());  // Remove os efeitos negativos enteriormente separados
+            }
         }
     }
 
@@ -48,12 +62,13 @@ public class DCCommonEvents {
         LivingEntity entity = event.getEntity();
         DamageSource source = event.getSource();
 
-        if (
-            // Tem armadura completa
-            ArmorVerification.hasFullArmor((Player) entity)
-            // Causador do dano é entidade
+        if (// Quem sofre o dano é player...
+            entity instanceof Player player
+            // ...e tem armadura completa
+            && ArmorVerification.hasFullArmor(player)
+            // Causador do dano é entidade...
             && source.getEntity() instanceof LivingEntity sourceEntity
-            // Item usado para causar dano não é a foice
+            // ...e item usado para causar dano não é a foice
             && !(sourceEntity.getMainHandItem().getItem() == InitToolItems.DEATHRIUM_SICKLE.get())
         ) event.setCanceled(true);  // Cancela o dano!
     }
@@ -78,26 +93,4 @@ public class DCCommonEvents {
 			event.setAttackDamage(0);
 		}
 	}
-
-    @SubscribeEvent
-    public static void onPotionApplicable(MobEffectEvent.Applicable event) {
-        if (event.getEntity() instanceof Player player && ArmorVerification.hasFullArmor(player)) {
-            MobEffectInstance effectInstance = event.getEffectInstance();
-
-            if (effectInstance != null) {
-                var holderEffect = effectInstance.getEffect();
-
-                if (holderEffect.value() != null 
-                    && holderEffect.value().getCategory() == MobEffectCategory.HARMFUL) {
-
-                    player.removeEffect(holderEffect);
-                    System.out.println("EFFECT REMOVED");
-
-                    return;
-                }
-            } else {
-                System.out.println("EFFECT INSTANCE É NULL");
-            }
-        }
-    }
 }
