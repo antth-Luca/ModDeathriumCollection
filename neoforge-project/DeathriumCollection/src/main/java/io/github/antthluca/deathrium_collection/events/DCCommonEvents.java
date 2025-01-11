@@ -10,6 +10,7 @@ import io.github.antthluca.deathrium_collection.utils.ArmorVerification;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,11 +37,9 @@ public class DCCommonEvents {
             // Não sente fome
             FoodData foodData = player.getFoodData();
             if (foodData.getSaturationLevel() < 5.0F) {
-                System.out.println("SATURAÇÃO DEFINIDA");
                 foodData.setSaturation(5.0F);
             }
             if (foodData.getFoodLevel() < 20) {
-                System.out.println("FOME DEFINIDA");
                 foodData.setFoodLevel(20);
             }
             // Remover efeitos negativos
@@ -62,15 +61,21 @@ public class DCCommonEvents {
         LivingEntity entity = event.getEntity();
         DamageSource source = event.getSource();
 
-        if (// Quem sofre o dano é player...
-            entity instanceof Player player
-            // ...e tem armadura completa
-            && ArmorVerification.hasFullArmor(player)
-            // Causador do dano é entidade...
-            && source.getEntity() instanceof LivingEntity sourceEntity
-            // ...e item usado para causar dano não é a foice
-            && !(sourceEntity.getMainHandItem().getItem() == InitToolItems.DEATHRIUM_SICKLE.get())
-        ) event.setCanceled(true);  // Cancela o dano!
+        // Verifica se quem sofre o dano é um jogador com armadura completa
+        if (entity instanceof Player player && ArmorVerification.hasFullArmor(player)) {
+
+            // Verifica se o dano é causado por uma entidade
+            if (source.getEntity() instanceof LivingEntity sourceEntity) {
+                // Cancela o dano se o item usado não for a foice
+                if (!sourceEntity.getMainHandItem().is(InitToolItems.DEATHRIUM_SICKLE.get())) {
+                    event.setCanceled(true);
+                }
+            } 
+            // Se o dano não for causado por uma entidade, verifica se é de Void
+            else if (source.is(DamageTypes.IN_WALL) || source.is(DamageTypes.FELL_OUT_OF_WORLD)) {
+                event.setCanceled(true);
+            }
+        }
     }
 
     @SubscribeEvent
