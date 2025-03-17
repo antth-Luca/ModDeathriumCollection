@@ -91,7 +91,7 @@ public class DCCommonEvents {
     @SubscribeEvent
 	public static void onEnderPearlTeleport(EntityTeleportEvent.EnderPearl event) {
 		if (event.getEntity() instanceof ServerPlayer player && ArmorVerification.hasFullArmor(player)) {
-            event.setCanceled(true);
+            event.setAttackDamage(0);
 		}
 	}
 }
