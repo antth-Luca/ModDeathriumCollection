@@ -23,7 +23,7 @@
   "item.deathrium_collection.insignia_of_death": "Insignia of Death",
   "item.deathrium_collection.insignia_of_death.kill": "Kills",
   "item.deathrium_collection.insignia_of_death.tooltip": "Claimed from Death in a bet made a long time ago.",
-  "item.deathrium_collection.signature_of_death": "Signature od Death",
+  "item.deathrium_collection.signature_of_death": "Signature of Death",
   "item.deathrium_collection.signature_of_death.tooltip": "Now that it's awake, it's Death's endorsement.",
   "item.deathrium_collection.deathrium_ingot": "Deathrium Ingot",
   "item.deathrium_collection.deathrium_ingot.tooltip": "An ore that even Death fears.",
@@ -36,6 +36,11 @@
   "item.deathrium_collection.deathrium_scythe": "Deathrium Scythe",
 
   "item.deathrium_collection.black_heart": "Black Heart",
+  "item.deathrium_collection.passage_key": "Key to the Passage",
+  "item.deathrium_collection.last_words_bell": "Bell of Last Words",
+  "item.deathrium_collection.reaper_feather": "Reaper Feather",
+  "item.deathrium_collection.death_cup": "Cup of Death",
+  "item.deathrium_collection.death_ring": "Ring of Death",
   "item.deathrium_collection.lamentation_crown": "Crown of Lamentation",
 
   "block.deathrium_collection.crystallized_soul_sand": "Crystallized Soul Sand"
