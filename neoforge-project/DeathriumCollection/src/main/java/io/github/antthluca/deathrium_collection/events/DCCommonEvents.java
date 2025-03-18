@@ -6,7 +6,7 @@ import java.util.List;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.init.InitToolItems;
-import io.github.antthluca.deathrium_collection.utils.ArmorVerification;
+import io.github.antthluca.deathrium_collection.utils.ArmorVerificationUtils;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,7 +28,7 @@ public class DCCommonEvents {
     public static void playerTick(PlayerTickEvent.Post event) {
         if (event.getEntity() instanceof Player player
             && !player.level().isClientSide() 
-            && ArmorVerification.hasFullArmor(player)) {
+            && ArmorVerificationUtils.hasFullArmor(player)) {
             // Remover fogo
             if (player.isOnFire() ) player.clearFire();
             // Respiração infinita
@@ -61,7 +61,7 @@ public class DCCommonEvents {
         DamageSource source = event.getSource();
 
         // Verifica se quem sofre o dano é um jogador com armadura completa
-        if (entity instanceof Player player && ArmorVerification.hasFullArmor(player)) {
+        if (entity instanceof Player player && ArmorVerificationUtils.hasFullArmor(player)) {
             // Verifica se o dano é causado por uma entidade
             if (source.getEntity() instanceof LivingEntity sourceEntity) {
                 // Cancela o dano se o item usado não for a foice
@@ -76,7 +76,7 @@ public class DCCommonEvents {
 
     @SubscribeEvent
     public static void onInvulnerabilityChecked(EntityInvulnerabilityCheckEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player && ArmorVerification.hasFullArmor(player)) {
+        if (event.getEntity() instanceof ServerPlayer player && ArmorVerificationUtils.hasFullArmor(player)) {
             var source = event.getSource();
             // Invulnerável ao dano de fogo
             if (source.is(DamageTypeTags.IS_FIRE)) event.setInvulnerable(true);
@@ -90,7 +90,7 @@ public class DCCommonEvents {
     // Invulnerável ao dano de Ender Pearl
     @SubscribeEvent
 	public static void onEnderPearlTeleport(EntityTeleportEvent.EnderPearl event) {
-		if (event.getEntity() instanceof ServerPlayer player && ArmorVerification.hasFullArmor(player)) {
+		if (event.getEntity() instanceof ServerPlayer player && ArmorVerificationUtils.hasFullArmor(player)) {
             event.setAttackDamage(0);
 		}
 	}

@@ -2,7 +2,7 @@ package io.github.antthluca.deathrium_collection.items.tool;
 
 import java.util.function.Function;
 
-import io.github.antthluca.deathrium_collection.utils.ArmorVerification;
+import io.github.antthluca.deathrium_collection.utils.ArmorVerificationUtils;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -46,7 +46,7 @@ public class DeathriumScythe extends SwordItem {
 
         if (!(target instanceof Player player)) {
             target.kill();  // Mata instantaneamente, se não for player.
-        } else if (!ArmorVerification.hasFullArmor(player)) {
+        } else if (!ArmorVerificationUtils.hasFullArmor(player)) {
             if (!player.isCreative()) {
                 target.kill();  // É player. Se não estiver completo de armadura, mata instantaneamente...
             } else {
