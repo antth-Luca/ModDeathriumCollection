@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "deathrium_collection:insignia_of_death"
+        }
+    ],
+    "result": {
+        "id": "deathrium_collection:insignia_of_death"
+    }
+}
