@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "deathrium_collection:nether_crystal_soul_sand_placed",
+  "step": "underground_ores"
+}

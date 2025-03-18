@@ -1,0 +1,4 @@
+// 1.21.1	2025-03-17T22:43:43.6725962	Registries
+a2e5ea992c804807a98e77135137d4b51a3f9588 data/deathrium_collection/neoforge/biome_modifier/add_nether_crystal_soul_sand.json
+eda2d621df399e8da20a1dde96e1c19d4c34dbef data/deathrium_collection/worldgen/configured_feature/nether_crystal_soul_sand.json
+be02eacf39f799ed5843c00706a09e492cca53c2 data/deathrium_collection/worldgen/placed_feature/nether_crystal_soul_sand_placed.json
