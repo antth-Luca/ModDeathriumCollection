@@ -20,7 +20,7 @@ public class DCConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest soulSandReplaceables = new BlockMatchTest(Blocks.SOUL_SAND);
 
-        register(context, NETHER_CRYSTAL_SOUL_SAND_KEY, Feature.ORE, new OreConfiguration(soulSandReplaceables, InitBlocks.CRYSTAL_SOUL_SAND.get().defaultBlockState(), 9));
+        register(context, NETHER_CRYSTAL_SOUL_SAND_KEY, Feature.ORE, new OreConfiguration(soulSandReplaceables, InitBlocks.CRYSTAL_SOUL_SAND.get().defaultBlockState(), 12));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

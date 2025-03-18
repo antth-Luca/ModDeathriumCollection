@@ -20,5 +20,4 @@ public class DCOrePlacement {
     public static List<PlacementModifier> rareOrePlacement(int pChance, PlacementModifier pHeightRange) {
         return orePlacement(RarityFilter.onAverageOnceEvery(pChance), pHeightRange);
     }
-
 }

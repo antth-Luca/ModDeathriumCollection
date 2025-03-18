@@ -21,7 +21,7 @@ public class DCPlacedFeatures {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, NETHER_CRYSTAL_SOUL_SAND_PLACED_KEY, configuredFeatures.getOrThrow(DCConfiguredFeatures.NETHER_CRYSTAL_SOUL_SAND_KEY),
-                DCOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31))));
+                DCOrePlacement.commonOrePlacement(30, HeightRangePlacement.uniform(VerticalAnchor.absolute(32), VerticalAnchor.absolute(128))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
