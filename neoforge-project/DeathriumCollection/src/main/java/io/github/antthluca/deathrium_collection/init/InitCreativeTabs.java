@@ -1,6 +1,7 @@
 package io.github.antthluca.deathrium_collection.init;
 
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
+import io.github.antthluca.deathrium_collection.integration.curios.init.InitRelicItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +24,7 @@ public class InitCreativeTabs {
                 InitToolItems.TOOL_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
                 InitArmorItems.ARMOR_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
                 InitBlockItems.BLOCK_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
+                InitRelicItems.RELIC_ITEMS.getEntries().forEach(item -> output.accept(item.get()));
             }).build()
     );
 }

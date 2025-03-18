@@ -9,6 +9,7 @@ import io.github.antthluca.deathrium_collection.init.InitDataComponentType;
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import io.github.antthluca.deathrium_collection.init.InitRecipeSerializers;
 import io.github.antthluca.deathrium_collection.init.InitToolItems;
+import io.github.antthluca.deathrium_collection.integration.curios.init.InitRelicItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -30,6 +31,8 @@ public class DeathriumCollection {
 
         InitArmorMaterials.ARMOR_MATERIALS.register(bus);
         InitArmorItems.ARMOR_ITEMS.register(bus);
+
+        InitRelicItems.RELIC_ITEMS.register(bus);
 
         InitCreativeTabs.TABS.register(bus);
         InitRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
