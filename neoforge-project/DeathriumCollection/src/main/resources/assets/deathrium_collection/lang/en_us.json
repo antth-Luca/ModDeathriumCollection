@@ -36,12 +36,26 @@
   "item.deathrium_collection.deathrium_scythe": "Deathrium Scythe",
 
   "item.deathrium_collection.black_heart": "Black Heart",
+  "item.deathrium_collection.black_heart.tooltip.lore": "This necrotic heart pulses with a dark and enigmatic power.",
+  "item.deathrium_collection.black_heart.tooltip.passive": "It restores your wounds with every blow struck against your enemies. Heals you for 30% of the damage dealt.",
   "item.deathrium_collection.passage_key": "Key to the Passage",
+  "item.deathrium_collection.passage_key.tooltip.lore": "This long-lost key unlocks the passage to the Afterlife.",
+    "item.deathrium_collection.passage_key.tooltip.passive": "It brings its targets ever closer to death. Increases your damage dealt by 8% of the target's current health.",
   "item.deathrium_collection.last_words_bell": "Bell of Last Words",
+  "item.deathrium_collection.last_words_bell.tooltip.lore": "Molten in the flames of the Afterlife and tempered by the echo of forgotten laments.",
+    "item.deathrium_collection.last_words_bell.tooltip.passive": "Ready to absorb farewells and final prayers. Slaughter your targets who have less than 5% of their maximum health.",
   "item.deathrium_collection.reaper_feather": "Reaper Feather",
+  "item.deathrium_collection.reaper_feather.tooltip.lore": "This feather fell straight from a reaper angel's wing.",
+    "item.deathrium_collection.reaper_feather.tooltip.passive": "It gives him some of the mobility of a reaper. Allows creative flight.",
   "item.deathrium_collection.death_cup": "Cup of Death",
+  "item.deathrium_collection.death_cup.tooltip.lore": "An unholy chalice overflowing with the souls of those who have fallen before its various bearers throughout the ages.",
+    "item.deathrium_collection.death_cup.tooltip.passive": "With each soul consumed, the bearer's power grows. Increases its damage by 0.5 with each kill.",
   "item.deathrium_collection.death_ring": "Ring of Death",
+  "item.deathrium_collection.death_ring.tooltip.lore": "This cursed ring transforms corpses into something darker than darkness itself: Deathrium.",
+    "item.deathrium_collection.death_ring.tooltip.passive": "Flesh falling apart, bones crystallizing and essence being fused. Each kill has a 15% chance of generating a Deathrium Ingot.",
   "item.deathrium_collection.lamentation_crown": "Crown of Lamentation",
+  "item.deathrium_collection.lamentation_crown.tooltip.lore": "Braided with the thorns of pain and adorned with the tears of the condemned.",
+    "item.deathrium_collection.lamentation_crown.tooltip.passive": "It grants the wearer terrifying clarity in the heat of battle. Increases critical damage dealt by 30%.",
 
   "block.deathrium_collection.crystallized_soul_sand": "Crystallized Soul Sand"
 }

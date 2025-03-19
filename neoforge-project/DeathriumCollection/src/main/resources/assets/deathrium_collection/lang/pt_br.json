@@ -36,12 +36,26 @@
     "item.deathrium_collection.deathrium_scythe": "Foice de Deathrium",
 
     "item.deathrium_collection.black_heart": "Coração Negro",
+    "item.deathrium_collection.black_heart.tooltip.lore": "Este coração necrosado pulsa com um poder sombrio e enigmático.",
+    "item.deathrium_collection.black_heart.tooltip.passive": "Restaura suas feridas a cada golpe desferido contra seus inimigos. Cura você em 30% do dano causado.",
     "item.deathrium_collection.passage_key": "Chave da Passagem",
+    "item.deathrium_collection.passage_key.tooltip.lore": "Esta chave perdida há muito tempo permite abrir a passagem para o Além.",
+    "item.deathrium_collection.passage_key.tooltip.passive": "Deixa seus alvos cada vez mais próximos da morte. Aumenta seu dano causado em 8% da saúde atual do alvo.",
     "item.deathrium_collection.last_words_bell": "Sino das Últimas Palavras",
+    "item.deathrium_collection.last_words_bell.tooltip.lore": "Fundido nas chamas do Além e temperado pelo eco dos lamentos esquecidos.",
+    "item.deathrium_collection.last_words_bell.tooltip.passive": "Pronto para absorver despedidas e preces finais. Abate seus alvos que estejam com menos de 5% da saúde máxima.",
     "item.deathrium_collection.reaper_feather": "Pena de Ceifeiro",
+    "item.deathrium_collection.reaper_feather.tooltip.lore": "Esta pena caiu diretamente de uma asa de anjo ceifeiro.",
+    "item.deathrium_collection.reaper_feather.tooltip.passive": "Lhe concede parte da mobilidade de um ceifeiro. Permite voo criativo.",
     "item.deathrium_collection.death_cup": "Taça da Morte",
+    "item.deathrium_collection.death_cup.tooltip.lore": "Um cálice profano que transborda com as almas daqueles que caíram perante seus diversos portadores durante as eras.",
+    "item.deathrium_collection.death_cup.tooltip.passive": "A cada alma consumida, o poder do portador cresce. Aumenta seu dano em 0.5 a cada abate.",
     "item.deathrium_collection.death_ring": "Anel da Morte",
+    "item.deathrium_collection.death_ring.tooltip.lore": "Este anel amaldiçoado transforma cadáveres em algo mais sombrio que a própria escuridão: o Deathrium.",
+    "item.deathrium_collection.death_ring.tooltip.passive": "Carne se desfazendo, ossos cristalizando e essência sendo fundida. Cada abate tem 15% de chance de gerar uma Barra de Deathrium.",
     "item.deathrium_collection.lamentation_crown": "Coroa dos Lamentos",
+    "item.deathrium_collection.lamentation_crown.tooltip.lore": "Trançada com os espinhos da dor e adornada com as lágrimas dos condenados.",
+    "item.deathrium_collection.lamentation_crown.tooltip.passive": "Concede ao portador uma clareza aterradora no calor da batalha. Aumenta o dano crítico causado em 30%.",
 
     "block.deathrium_collection.crystallized_soul_sand": "Areia da Alma Cristalizada"
 }
