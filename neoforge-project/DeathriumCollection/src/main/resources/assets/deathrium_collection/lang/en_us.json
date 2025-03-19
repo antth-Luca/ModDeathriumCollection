@@ -1,6 +1,8 @@
 {
   "itemGroup.deathrium_collection": "Deathrium Collection",
 
+  "curios.identifier.chest": "Chest",
+
   "item.deathrium_collection.common_tooltip": "Press SHIFT for details",
 
   "item.deathrium_collection.oxidized_alloy": "Oxidized Alloy",

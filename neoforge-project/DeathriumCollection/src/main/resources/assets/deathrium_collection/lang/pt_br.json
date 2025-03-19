@@ -1,6 +1,8 @@
 {
     "itemGroup.deathrium_collection": "Deathrium Collection",
 
+    "curios.identifier.chest": "Peito",
+
     "item.deathrium_collection.common_tooltip": "Pressione SHIFT para detalhes",
 
     "item.deathrium_collection.oxidized_alloy": "Liga Oxidada",
