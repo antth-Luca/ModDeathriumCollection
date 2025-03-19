@@ -3,20 +3,19 @@ package io.github.antthluca.deathrium_collection.integration.curios.items;
 import java.util.List;
 
 import io.github.antthluca.deathrium_collection.integration.curios.items.custom.RelicItem;
+import io.github.antthluca.deathrium_collection.integration.curios.rarities.DCRarities;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 public class LastWordsBellItem extends RelicItem {
     public LastWordsBellItem() {
-        super(new Item.Properties()
-            .rarity(Rarity.EPIC));
+        super(new Item.Properties(), DCRarities.MITHIC);
     }
 
     @Override

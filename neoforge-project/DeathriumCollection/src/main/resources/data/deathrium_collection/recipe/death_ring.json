@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " ND",
+        "N N",
+        "DN "
+    ],
+    "key": {
+        "N": {
+            "item": "deathrium_collection:pinkiron_nugget"
+        },
+        "D": {
+            "item": "deathrium_collection:deathrium_ingot"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:death_ring",
+        "count": 1
+    }
+}

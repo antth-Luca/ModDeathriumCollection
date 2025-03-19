@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DGD",
+        "DGD",
+        " D "
+    ],
+    "key": {
+        "D": {
+            "item": "deathrium_collection:deathrium_ingot"
+        },
+        "G": {
+            "item": "deathrium_collection:soul_glass"
+        }
+    },
+    "result": {
+        "id": "deathrium_collection:death_cup",
+        "count": 1
+    }
+}
