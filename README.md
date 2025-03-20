@@ -3,3 +3,7 @@
 # Repository: DeathriumCollection
  
 My second mod for Minecraft! It brings a collection of Death's relics and an ore that even Death fears... the Deathrium Ingot.
+
+## Supported/translated languages:
+* PT-BR: Português, Brasil
+* EN-US: English, USA
