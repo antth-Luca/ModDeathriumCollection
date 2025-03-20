@@ -16,6 +16,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import top.theillusivec4.curios.api.CuriosApi;
 
 @EventBusSubscriber(modid = DeathriumCollection.MODID)
@@ -26,10 +27,34 @@ public class DCRelicEffects {
     private static final float CHANCE_DROP_RING = 0.15f;
 
     // Events
+    @SuppressWarnings("deprecation")
+    @SubscribeEvent
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
+        Player player = event.getEntity();
+
+        if (player.tickCount % 20 != 0) return;
+
+        // REAPER FEATHER
+        boolean hasFeather = hasCurio((LivingEntity) player, InitRelicItems.REAPER_FEATHER.get());
+
+        if (hasFeather) {
+            if (!player.getAbilities().mayfly) {
+                player.getAbilities().mayfly = true;
+                player.onUpdateAbilities();
+            }
+        } else {
+            if (player.getAbilities().mayfly) {
+                player.getAbilities().mayfly = false;
+                player.getAbilities().flying = false;
+                player.onUpdateAbilities();
+            }
+        }
+    }
+
     @SubscribeEvent
     public static void onEnemyDeath(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            // Verifica se o jogador tem a relíquia equipada
+            // DEATH RING
             boolean hasRing = hasCurio((LivingEntity) player, InitRelicItems.DEATH_RING.get());
 
             if (hasRing) {
@@ -44,7 +69,7 @@ public class DCRelicEffects {
     @SubscribeEvent
     public static void onPlayerDealDamage(LivingIncomingDamageEvent event) {
         if (event.getSource().getEntity() instanceof Player player) {
-            // Verifica se o jogador tem a relíquia equipada
+            // BLACK HEART
             boolean hasHeart = hasCurio((LivingEntity) player, InitRelicItems.BLACK_HEART.get());
 
             if (hasHeart) {
@@ -64,7 +89,6 @@ public class DCRelicEffects {
     private static void dropDeathriumIngot(LivingEntity entity, Player player) {
         // Cria o item de drop
         ItemStack deathriumIngot = new ItemStack(InitItems.DEATHRIUM_INGOT.get());
-        
         // Solta o item no mundo na posição do inimigo derrotado
         entity.spawnAtLocation(deathriumIngot);
     }
