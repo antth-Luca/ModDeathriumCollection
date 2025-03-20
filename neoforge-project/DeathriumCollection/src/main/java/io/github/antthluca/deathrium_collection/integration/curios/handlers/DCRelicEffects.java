@@ -47,7 +47,7 @@ public class DCRelicEffects {
                 player.getAbilities().mayfly = true;
                 player.onUpdateAbilities();
             }
-        } else {
+        } else if (!player.isCreative() && !player.isSpectator()) {
             if (player.getAbilities().mayfly) {
                 player.getAbilities().mayfly = false;
                 player.getAbilities().flying = false;
