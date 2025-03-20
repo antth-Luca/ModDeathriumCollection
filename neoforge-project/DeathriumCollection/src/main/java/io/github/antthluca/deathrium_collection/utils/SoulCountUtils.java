@@ -7,18 +7,33 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
 public class SoulCountUtils {
-    public static final int MAX_SOULS = 20;
+    public static final int MAX_SOULS_INSIGNIA = 20;
+    public static final int MAX_SOULS_CUP = 1000;
 
     public static void addSoulsToInsignia(Player player, ItemStack stack, int amount) {
         int souls = getSouls(stack);
 
-        if (souls >= MAX_SOULS) {
+        if (souls >= MAX_SOULS_INSIGNIA) {
             upgradeInsigniaToSignature(player);
         } else {
-            int newAmount = Math.min(MAX_SOULS, souls + amount);
+            int newAmount = Math.min(MAX_SOULS_INSIGNIA, souls + amount);
 
-            if (newAmount >= MAX_SOULS) {
+            if (newAmount >= MAX_SOULS_INSIGNIA) {
                 upgradeInsigniaToSignature(player);
+            } else {
+                stack.set(InitDataComponentType.SOUL_COUNT, newAmount);
+            }
+        }
+    }
+
+    public static void addSoulsToCup(Player player, ItemStack stack, int amount) {
+        int souls = getSouls(stack);
+
+        if (souls < MAX_SOULS_CUP) {
+            int newAmount = Math.min(MAX_SOULS_CUP, souls + amount);
+
+            if (newAmount > MAX_SOULS_CUP) {
+                stack.set(InitDataComponentType.SOUL_COUNT, MAX_SOULS_CUP);
             } else {
                 stack.set(InitDataComponentType.SOUL_COUNT, newAmount);
             }

@@ -50,6 +50,8 @@
   "item.deathrium_collection.reaper_feather.tooltip.lore": "This feather fell straight from a reaper angel's wing.",
     "item.deathrium_collection.reaper_feather.tooltip.passive": "It gives him some of the mobility of a reaper. Allows creative flight.",
   "item.deathrium_collection.death_cup": "Cup of Death",
+  "item.deathrium_collection.death_cup.collected": "Colleted",
+  "item.deathrium_collection.death_cup.accumulated": "Accumulated",
   "item.deathrium_collection.death_cup.tooltip.lore": "An unholy chalice overflowing with the souls of those who have fallen before its various bearers throughout the ages.",
     "item.deathrium_collection.death_cup.tooltip.passive": "With each soul consumed, the bearer's power grows. Increases its damage by 0.5 with each kill.",
   "item.deathrium_collection.death_ring": "Ring of Death",

@@ -13,8 +13,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 public class InsigniaOfDeath extends Item {
-    // public static final int KILL_COMPLETE = 20;
-
     public InsigniaOfDeath(Properties prop) {
         super(prop);
     }
@@ -26,7 +24,7 @@ public class InsigniaOfDeath extends Item {
         tooltip.add(
             Component.translatable("item.deathrium_collection.insignia_of_death.kill")
             .append(": ")
-            .append(Component.literal(SoulCountUtils.getSouls(stack) + "/" + SoulCountUtils.MAX_SOULS))
+            .append(Component.literal(SoulCountUtils.getSouls(stack) + "/" + SoulCountUtils.MAX_SOULS_INSIGNIA))
         );
         if (Screen.hasShiftDown()) {
             tooltip.add(Component.translatable("item.deathrium_collection.insignia_of_death.tooltip").withStyle(ChatFormatting.GRAY));

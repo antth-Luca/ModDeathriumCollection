@@ -50,6 +50,8 @@
     "item.deathrium_collection.reaper_feather.tooltip.lore": "Esta pena caiu diretamente de uma asa de anjo ceifeiro.",
     "item.deathrium_collection.reaper_feather.tooltip.passive": "Lhe concede parte da mobilidade de um ceifeiro. Permite voo criativo.",
     "item.deathrium_collection.death_cup": "Taça da Morte",
+    "item.deathrium_collection.death_cup.collected": "Coletado",
+    "item.deathrium_collection.death_cup.accumulated": "Acumulado",
     "item.deathrium_collection.death_cup.tooltip.lore": "Um cálice profano que transborda com as almas daqueles que caíram perante seus diversos portadores durante as eras.",
     "item.deathrium_collection.death_cup.tooltip.passive": "A cada alma consumida, o poder do portador cresce. Aumenta seu dano em 0.5 a cada abate.",
     "item.deathrium_collection.death_ring": "Anel da Morte",

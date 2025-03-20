@@ -8,6 +8,7 @@ import org.apache.commons.lang3.tuple.ImmutableTriple;
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import io.github.antthluca.deathrium_collection.integration.curios.init.InitRelicItems;
+import io.github.antthluca.deathrium_collection.utils.SoulCountUtils;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -30,6 +31,7 @@ public class DCRelicEffects {
     private static final float INCREMENT_PASSAGE_KEY = 0.08f;  // 8%
     private static final float INCREMENT_LAMENTATION_CROWN = 0.3f;  // 30%
     private static final float CONDITION_LAST_WORDS_BELL = 0.05f;  // 5%
+    private static final float DAMAGE_BY_SOUL_DEATH_CUP = 0.5f;  // 0.5 por alma/abate
 
     // Events
     @SuppressWarnings("deprecation")
@@ -58,15 +60,28 @@ public class DCRelicEffects {
 
     @SubscribeEvent
     public static void onEnemyDeath(LivingDeathEvent event) {
-        if (event.getSource().getEntity() instanceof Player player) {
+        DamageSource source = event.getSource();
+
+        // Verifica se quem abateu é um player
+        if (source.getEntity() instanceof Player player) {
+            LivingEntity sourceEntity = (LivingEntity) source.getEntity();  // Otimiza fazendo um único get com uma única conversão de tipo. Recupera a entidade que causa o dano.
+
             // DEATH RING
-            boolean hasRing = hasCurio((LivingEntity) player, InitRelicItems.DEATH_RING.get());
+            boolean hasRing = hasCurio(sourceEntity, InitRelicItems.DEATH_RING.get());
 
             if (hasRing) {
                 // Sorteia a chance de drop
                 if (RANDOM.nextFloat() < CHANCE_DROP_RING) {
                     dropDeathriumIngot(event.getEntity(), player);
                 }
+            }
+
+            // DEATH CUP - INCREMENT
+            Optional<ImmutableTriple<String, Integer, ItemStack>> dataCup = getCurioData(sourceEntity, InitRelicItems.DEATH_CUP.get());
+            boolean hasCup = dataCup.isPresent();
+
+            if (hasCup) {
+                SoulCountUtils.addSoulsToCup(player, dataCup.get().right, 1);
             }
         }
     }
@@ -81,13 +96,23 @@ public class DCRelicEffects {
         if (source.getEntity() instanceof Player player) {
             LivingEntity sourceEntity = (LivingEntity) source.getEntity();  // Otimiza fazendo um único get com uma única conversão de tipo. Recupera a entidade que causa o dano.
 
+            // DEATH CUP - DAMAGE
+            Optional<ImmutableTriple<String, Integer, ItemStack>> dataCup = getCurioData(sourceEntity, InitRelicItems.DEATH_CUP.get());
+            boolean hasCup = dataCup.isPresent();
+
+            if (hasCup) {
+                float extraDamage = SoulCountUtils.getSouls(dataCup.get().right) * DAMAGE_BY_SOUL_DEATH_CUP;
+
+                event.setAmount(event.getOriginalAmount() + extraDamage);
+            }
+
             // PASSAGE KEY
             boolean hasKey = hasCurio(sourceEntity, InitRelicItems.PASSAGE_KEY.get());
 
             if (hasKey) {
                 float extraDamage = targetEntity.getHealth() * INCREMENT_PASSAGE_KEY;
 
-                event.setAmount(event.getAmount() + extraDamage);
+                event.setAmount(event.getOriginalAmount() + extraDamage);
             }
 
             // LAMENTATION CROWN
@@ -125,6 +150,11 @@ public class DCRelicEffects {
     public static boolean hasCurio(final LivingEntity entity, final Item curio) {
         final Optional<ImmutableTriple<String, Integer, ItemStack>> data = CuriosApi.getCuriosHelper().findEquippedCurio(curio, entity);
 		return data.isPresent();
+	}
+
+    @SuppressWarnings({ "deprecation", "removal" })
+    public static Optional<ImmutableTriple<String, Integer, ItemStack>> getCurioData(final LivingEntity entity, final Item curio) {
+        return CuriosApi.getCuriosHelper().findEquippedCurio(curio, entity);
 	}
 
     private static void dropDeathriumIngot(LivingEntity entity, Player player) {
