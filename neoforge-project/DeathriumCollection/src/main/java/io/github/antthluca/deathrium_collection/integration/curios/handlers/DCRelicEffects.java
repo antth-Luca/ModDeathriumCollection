@@ -8,6 +8,8 @@ import org.apache.commons.lang3.tuple.ImmutableTriple;
 import io.github.antthluca.deathrium_collection.DeathriumCollection;
 import io.github.antthluca.deathrium_collection.init.InitItems;
 import io.github.antthluca.deathrium_collection.integration.curios.init.InitRelicItems;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -26,6 +28,7 @@ public class DCRelicEffects {
     private static final float LIFESTEAL_BLACK_HEART = 0.3f;
     private static final float CHANCE_DROP_RING = 0.15f;
     private static final float INCREMENT_PASSAGE_KEY = 0.08f;
+    private static final float INCREMENT_LAMENTATION_CROWN = 0.3f;
 
     // Events
     @SuppressWarnings("deprecation")
@@ -69,23 +72,38 @@ public class DCRelicEffects {
 
     @SubscribeEvent
     public static void onPlayerDealDamage(LivingIncomingDamageEvent event) {
-        if (event.getSource().getEntity() instanceof Player player) {
+        DamageSource source = event.getSource();
+        LivingEntity targetEntity = event.getEntity();
+        
+
+        // Verifica se quem causa o dano é um player
+        if (source.getEntity() instanceof Player player) {
+            LivingEntity sourceEntity = (LivingEntity) source.getEntity();  // Otimiza fazendo um único get com uma única conversão de tipo. Recupera a entidade que causa o dano.
+
+            // PASSAGE KEY
+            boolean hasKey = hasCurio(sourceEntity, InitRelicItems.PASSAGE_KEY.get());
+
+            if (hasKey) {
+                float extraDamage = targetEntity.getHealth() * INCREMENT_PASSAGE_KEY;
+
+                event.setAmount(event.getAmount() + extraDamage);
+            }
+
+            // LAMENTATION CROWN
+            boolean hasCrown = hasCurio(sourceEntity, InitRelicItems.LAMENTATION_CROWN.get());
+
+            if (hasCrown && isCriticalHit(player)) {
+                float extraDamage = event.getAmount() * INCREMENT_LAMENTATION_CROWN;
+
+                event.setAmount(event.getAmount() + extraDamage);
+            }
+
             // BLACK HEART
-            boolean hasHeart = hasCurio((LivingEntity) player, InitRelicItems.BLACK_HEART.get());
+            boolean hasHeart = hasCurio(sourceEntity, InitRelicItems.BLACK_HEART.get());
 
             if (hasHeart) {
                 float healAmount = event.getAmount() * LIFESTEAL_BLACK_HEART;
                 player.heal(healAmount);
-            }
-
-            // PASSAGE KEY
-            boolean hasKey = hasCurio((LivingEntity) player, InitRelicItems.PASSAGE_KEY.get());
-
-            if (hasKey) {
-                LivingEntity target = event.getEntity();
-                float extraDamage = target.getHealth() * INCREMENT_PASSAGE_KEY;
-
-                event.setAmount(event.getAmount() + extraDamage);
             }
         }
     }
@@ -102,5 +120,10 @@ public class DCRelicEffects {
         ItemStack deathriumIngot = new ItemStack(InitItems.DEATHRIUM_INGOT.get());
         // Solta o item no mundo na posição do inimigo derrotado
         entity.spawnAtLocation(deathriumIngot);
+    }
+
+    private static boolean isCriticalHit(Player player) {
+        // Verifica se o jogador realizou um acerto crítico
+        return player.fallDistance > 0.0F && !player.onGround() && !player.isInWater() && !player.hasEffect(MobEffects.BLINDNESS);
     }
 }
