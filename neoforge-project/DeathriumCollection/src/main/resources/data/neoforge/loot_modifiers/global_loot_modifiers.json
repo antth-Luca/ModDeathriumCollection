@@ -1,0 +1,9 @@
+{
+    "entries": [
+        "deathrium_collection:nether_fortress",
+        "deathrium_collection:desert_temple",
+        "deathrium_collection:woodland_mansion",
+        "deathrium_collection:mineshaft"
+    ],
+    "replace": false
+}

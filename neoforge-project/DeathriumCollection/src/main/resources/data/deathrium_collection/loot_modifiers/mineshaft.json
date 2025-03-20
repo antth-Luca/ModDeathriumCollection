@@ -1,0 +1,10 @@
+{
+    "type": "deathrium_collection:add_item",
+    "conditions": [
+        {
+            "condition": "neoforge:loot_table_id",
+            "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+        }
+    ],
+    "item": "deathrium_collection:last_words_bell"
+}

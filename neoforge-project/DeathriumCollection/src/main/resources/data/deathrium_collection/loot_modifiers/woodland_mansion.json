@@ -1,0 +1,10 @@
+{
+    "type": "deathrium_collection:add_item",
+    "conditions": [
+        {
+            "condition": "neoforge:loot_table_id",
+            "loot_table_id": "minecraft:chests/woodland_mansion"
+        }
+    ],
+    "item": "deathrium_collection:reaper_feather"
+}
