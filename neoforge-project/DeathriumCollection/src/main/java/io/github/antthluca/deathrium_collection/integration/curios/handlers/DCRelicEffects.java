@@ -25,10 +25,11 @@ import top.theillusivec4.curios.api.CuriosApi;
 public class DCRelicEffects {
     // Constants
     private static final Random RANDOM = new Random();
-    private static final float LIFESTEAL_BLACK_HEART = 0.3f;
-    private static final float CHANCE_DROP_RING = 0.15f;
-    private static final float INCREMENT_PASSAGE_KEY = 0.08f;
-    private static final float INCREMENT_LAMENTATION_CROWN = 0.3f;
+    private static final float LIFESTEAL_BLACK_HEART = 0.3f;  // 30%
+    private static final float CHANCE_DROP_RING = 0.15f;  // 15%
+    private static final float INCREMENT_PASSAGE_KEY = 0.08f;  // 8%
+    private static final float INCREMENT_LAMENTATION_CROWN = 0.3f;  // 30%
+    private static final float CONDITION_LAST_WORDS_BELL = 0.05f;  // 5%
 
     // Events
     @SuppressWarnings("deprecation")
@@ -36,7 +37,7 @@ public class DCRelicEffects {
     public static void onPlayerTick(PlayerTickEvent.Post event) {
         Player player = event.getEntity();
 
-        if (player.tickCount % 20 != 0) return;
+        if (player.tickCount % 20 != 0) return;  // A cada 1 segundo
 
         // REAPER FEATHER
         boolean hasFeather = hasCurio((LivingEntity) player, InitRelicItems.REAPER_FEATHER.get());
@@ -62,7 +63,7 @@ public class DCRelicEffects {
             boolean hasRing = hasCurio((LivingEntity) player, InitRelicItems.DEATH_RING.get());
 
             if (hasRing) {
-                // Sorteia a chance de drop (15%)
+                // Sorteia a chance de drop
                 if (RANDOM.nextFloat() < CHANCE_DROP_RING) {
                     dropDeathriumIngot(event.getEntity(), player);
                 }
@@ -104,6 +105,17 @@ public class DCRelicEffects {
             if (hasHeart) {
                 float healAmount = event.getAmount() * LIFESTEAL_BLACK_HEART;
                 player.heal(healAmount);
+            }
+
+            // LAST WORDS BELL
+            boolean hasBell = hasCurio(sourceEntity, InitRelicItems.LAST_WORDS_BELL.get());
+
+            if (hasBell) {
+                float threshold = targetEntity.getMaxHealth() * CONDITION_LAST_WORDS_BELL;
+
+                if ((targetEntity.getHealth() - event.getAmount()) <= threshold) {
+                    targetEntity.kill();
+                }
             }
         }
     }
