@@ -1,4 +1,4 @@
-![Deathrium Collection Logo](https://github.com/antth-Luca/ModDeathriumCollection/blob/main/neoforge-project/DeathriumCollection/src/main/resources/logo.png)
+![Deathrium Collection Logo](https://github.com/antth-Luca/ModDeathriumCollection/blob/v1.0-mc1.21.1/neoforge-project/DeathriumCollection/src/main/resources/logo.png)
 
 # Repository: Deathrium Collection
  
