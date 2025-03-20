@@ -25,6 +25,7 @@ public class DCRelicEffects {
     private static final Random RANDOM = new Random();
     private static final float LIFESTEAL_BLACK_HEART = 0.3f;
     private static final float CHANCE_DROP_RING = 0.15f;
+    private static final float INCREMENT_PASSAGE_KEY = 0.08f;
 
     // Events
     @SuppressWarnings("deprecation")
@@ -76,10 +77,20 @@ public class DCRelicEffects {
                 float healAmount = event.getAmount() * LIFESTEAL_BLACK_HEART;
                 player.heal(healAmount);
             }
+
+            // PASSAGE KEY
+            boolean hasKey = hasCurio((LivingEntity) player, InitRelicItems.PASSAGE_KEY.get());
+
+            if (hasKey) {
+                LivingEntity target = event.getEntity();
+                float extraDamage = target.getHealth() * INCREMENT_PASSAGE_KEY;
+
+                event.setAmount(event.getAmount() + extraDamage);
+            }
         }
     }
 
-    // Help functions
+    // Auxiliary functions
     @SuppressWarnings({ "deprecation", "removal" })
     public static boolean hasCurio(final LivingEntity entity, final Item curio) {
         final Optional<ImmutableTriple<String, Integer, ItemStack>> data = CuriosApi.getCuriosHelper().findEquippedCurio(curio, entity);
